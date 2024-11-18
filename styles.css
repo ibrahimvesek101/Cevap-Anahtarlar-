@@ -8,7 +8,7 @@ body {
     color: #333;
 }
 
-/* BaÅŸlÄ±k */
+/* Başlık */
 .header {
     background-color: #4CAF50;
     color: white;
@@ -35,7 +35,34 @@ body {
     padding: 10px;
 }
 
-/* Cevap AnahtarÄ± */
+/* Test Listesi */
+.test-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.test-list li {
+    margin: 15px 0; /* Her butonun arasında 15px boşluk bırak */
+}
+
+.test-list a {
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    display: inline-block; /* Butonları düzenli tut */
+}
+
+.test-list a:hover {
+    background-color: #45a049;
+}
+
+/* Cevap Anahtarı */
 .cevap-anahtari {
     max-width: 100%;
     border: 1px solid #ddd;
@@ -43,7 +70,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Video Ã‡Ã¶zÃ¼mleri */
+/* Video Çözümleri */
 .video-buttons {
     list-style: none;
     padding: 0;
@@ -70,10 +97,11 @@ body {
     color: white;
 }
 
-/* Video AlanÄ± */
+/* Video Alanı */
 .test-video {
     text-align: center;
     margin-top: 20px;
+    position: relative; /* Kapat butonu için referans noktası */
 }
 
 .test-video video {
@@ -82,26 +110,23 @@ body {
     border-radius: 5px;
 }
 
+/* Kapat Butonu */
 .test-video button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    position: absolute; /* Sağ üst köşeye yerleştir */
+    top: 10px; /* Videonun üstünden biraz boşluk */
+    right: 10px; /* Videonun sağından biraz boşluk */
+    background-color: #ff4d4d; /* Kırmızı arka plan */
+    color: white; /* Beyaz yazı */
+    border: none; /* Kenarlık yok */
+    border-radius: 8px; /* Kenarları hafif yuvarlak */
+    padding: 5px 12px; /* İç boşluklar */
+    font-size: 0.9em; /* Yazı boyutu */
+    font-weight: bold; /* Yazı kalınlığı */
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .test-video button:hover {
-    background-color: #45a049;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 15px 0;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ff1a1a; /* Üzerine gelindiğinde koyu kırmızı */
+    transform: scale(1.05); /* Hover sırasında butonu biraz büyüt */
 }
