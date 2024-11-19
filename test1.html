@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 </head>
 <body>
     <main class="container">
-        <h3 class="test-title">TEST-1 Cevap Anahtarı</h3>
+        <h3 class="test-title">Test-1 Cevap Anahtarı</h3>
 
         <section class="cevap-anahtari">
             <table class="cevap-tablosu">
@@ -55,33 +55,43 @@
             </table>
         </section>
 
-        <div id="video-container" class="test-video" style="display: none;">
+        <!-- Arka Plan Karanlıklaştırma -->
+        <div id="overlay" class="overlay" onclick="closeVideo()"></div>
+
+        <!-- Video Alanı -->
+        <div id="video-container" class="video-container">
             <video controls id="video-player">
                 <source id="video-source" src="" type="video/mp4">
-                Tarayıcınız bu videoyu oynatmayı desteklemiyor.
+                Tarayıcınız bu videoyu desteklemiyor.
             </video>
             <button onclick="closeVideo()">Kapat</button>
         </div>
     </main>
 
-
     <script>
-        function showVideo(soruNumarasi) {
+        // Video Gösterme
+        function showVideo(questionNumber) {
             const videoContainer = document.getElementById("video-container");
+            const overlay = document.getElementById("overlay");
             const videoPlayer = document.getElementById("video-player");
             const videoSource = document.getElementById("video-source");
 
-            videoSource.src = `test1_soru${soruNumarasi}.mp4`;
+            videoSource.src = `test1_soru${questionNumber}.mp4`; // Videonun yolunu ayarla
             videoPlayer.load();
-            videoContainer.style.display = "block";
+
+            overlay.style.display = "block"; // Arka planı karart
+            videoContainer.style.display = "block"; // Videoyu göster
         }
 
+        // Video Kapatma
         function closeVideo() {
             const videoContainer = document.getElementById("video-container");
+            const overlay = document.getElementById("overlay");
             const videoPlayer = document.getElementById("video-player");
 
-            videoPlayer.pause();
-            videoContainer.style.display = "none";
+            videoPlayer.pause(); // Videoyu durdur
+            videoContainer.style.display = "none"; // Videoyu gizle
+            overlay.style.display = "none"; // Arka plan karartmasını kaldır
         }
     </script>
 </body>
