@@ -84,17 +84,20 @@ body {
     left: 50%; /* Dikey ortalamak için */
     transform: translate(-50%, -50%); /* Merkeze tam hizalamak için */
     background-color: white; /* Video alanının arka planı */
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     display: none; /* Varsayılan olarak gizli */
+    max-width: 90%; /* Video genişliği ekranın %90'ını geçmesin */
+    max-height: 90vh; /* Video yüksekliği ekranın %90'ını geçmesin */
 }
 
 /* Video */
 .video-container video {
     width: 100%; /* Videoyu container genişliğine ayarla */
     height: auto; /* Oran korunsun */
+    max-height: 80vh; /* Videonun yüksekliği ekranın %80'ini aşmasın */
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -112,6 +115,7 @@ body {
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.3s;
+    z-index: 1001; /* Butonun video üzerinde kalmasını sağla */
 }
 
 .video-container button:hover {
