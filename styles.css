@@ -1,132 +1,112 @@
 /* Genel Stil */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #d4c38e;
     color: #333;
-}
 
-/* Başlık */
-.header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.header .back-link {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9em;
-    display: block;
-    margin-top: 10px;
-}
-
-.header .back-link:hover {
-    text-decoration: underline;
+    /* İçeriği tamamen ortalamak için flexbox */
+    display: flex;
+    justify-content: center; /* Yatayda ortala */
+    align-items: flex-start; /* İçeriği yukarı hizala */
+    min-height: 100vh;      /* Görünüm yüksekliğini kapla */
+    overflow-x: hidden;     /* Yatay kaydırmayı engelle */
 }
 
 /* Ana Konteyner */
 .container {
-    margin: 20px auto;
-    max-width: 900px;
+    text-align: center;
+    width: 100%;
+    max-width: 9000px;       /* İçerik genişliği */
+    margin: 20px auto;      /* Yukarıdan biraz boşluk bırak */
     padding: 10px;
+    box-sizing: border-box; /* Padding'lerin genişlik hesaplamasına dahil edilmesi */
 }
 
-/* Test Listesi */
-.test-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
+/* Test Başlığı */
+.test-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f20606;
+}
+
+/* Cevap Anahtarı Tablosu */
+.cevap-tablosu {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;      /* Tabloyu tam ortala */
     text-align: center;
 }
 
-.test-list li {
-    margin: 15px 0; /* Her butonun arasında 15px boşluk bırak */
+.cevap-tablosu thead th {
+    background-color: #e6a955;
+    color: rgb(4, 4, 4);
+    padding: 10px;
+    border: 3px solid #be8364;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-.test-list a {
-    text-decoration: none;
+.cevap-tablosu tbody td {
+    padding: 10px;
+    border: 3px solid #be8364;
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+.cevap-tablosu tbody tr:hover td {
+    background-color: #e8f5e8;
+}
+
+/* Video Butonu */
+.cevap-tablosu tbody button {
     background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 12px;
     border-radius: 5px;
     font-size: 1em;
-    transition: background-color 0.3s;
-    display: inline-block; /* Butonları düzenli tut */
-}
-
-.test-list a:hover {
-    background-color: #45a049;
-}
-
-/* Cevap Anahtarı */
-.cevap-anahtari {
-    max-width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-/* Video Çözümleri */
-.video-buttons {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.video-buttons li {
     cursor: pointer;
-    padding: 8px 12px;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 0.9em;
-    color: #333;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s;
 }
 
-.video-buttons li:hover {
-    background-color: #4CAF50;
-    color: white;
+.cevap-tablosu tbody button:hover {
+    background-color: #45a049;
 }
 
 /* Video Alanı */
 .test-video {
     text-align: center;
-    margin-top: 20px;
-    position: relative; /* Kapat butonu için referans noktası */
+    margin-top: 40px; /* Video kısmı biraz aşağı kaydırıldı */
+    position: relative;
+    display: inline-block;
 }
 
+/* Video */
 .test-video video {
-    max-width: 100%;
+    width: 100%; /* Videoyu container genişliğine ayarla */
+    height: auto; /* Oran korunsun */
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 /* Kapat Butonu */
 .test-video button {
-    position: absolute; /* Sağ üst köşeye yerleştir */
-    top: 10px; /* Videonun üstünden biraz boşluk */
-    right: 10px; /* Videonun sağından biraz boşluk */
-    background-color: #ff4d4d; /* Kırmızı arka plan */
-    color: white; /* Beyaz yazı */
-    border: none; /* Kenarlık yok */
-    border-radius: 8px; /* Kenarları hafif yuvarlak */
-    padding: 5px 12px; /* İç boşluklar */
-    font-size: 0.9em; /* Yazı boyutu */
-    font-weight: bold; /* Yazı kalınlığı */
+    position: absolute;
+    top: -30px; /* Videonun hemen üstüne konumlandırıldı */
+    right: 10px; /* Sağ tarafa hizalandı */
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
 }
 
 .test-video button:hover {
-    background-color: #ff1a1a; /* Üzerine gelindiğinde koyu kırmızı */
-    transform: scale(1.05); /* Hover sırasında butonu biraz büyüt */
+    background-color: #ff1a1a;
 }

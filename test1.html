@@ -4,39 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Test 1</title>
+    <title>Test-1 Cevap Anahtarı</title>
 </head>
 <body>
-    <header class="header">
-        <h1>Test 1</h1>
-        <p>Cevap Anahtarı ve Çözüm Videoları</p>
-        <a href="index.html" class="back-link">← Ana Sayfa</a>
-    </header>
-
     <main class="container">
-        <div class="test-content">
-            <h2>Cevap Anahtarı</h2>
-            <img src="test1_cevaplar.png" alt="Test 1 Cevap Anahtarı" class="cevap-anahtari">
-        </div>
+        <h3 class="test-title">TEST-1 Cevap Anahtarı</h3>
 
-        <div class="video-cozumler">
-            <h2>Video Çözümleri</h2>
-            <ul class="video-buttons">
-                <li onclick="showVideo(1)">Cevap 1</li>
-                <li onclick="showVideo(2)">Cevap 2</li>
-                <li onclick="showVideo(3)">Cevap 3</li>
-                <li onclick="showVideo(4)">Cevap 4</li>
-                <li onclick="showVideo(5)">Cevap 5</li>
-                <li onclick="showVideo(6)">Cevap 6</li>
-                <li onclick="showVideo(7)">Cevap 7</li>
-                <li onclick="showVideo(8)">Cevap 8</li>
-                <li onclick="showVideo(9)">Cevap 9</li>
-                <li onclick="showVideo(10)">Cevap 10</li>
-            </ul>
-        </div>
+        <section class="cevap-anahtari">
+            <table class="cevap-tablosu">
+                <thead>
+                    <tr>
+                        <th>Soru 1</th>
+                        <th>Soru 2</th>
+                        <th>Soru 3</th>
+                        <th>Soru 4</th>
+                        <th>Soru 5</th>
+                        <th>Soru 6</th>
+                        <th>Soru 7</th>
+                        <th>Soru 8</th>
+                        <th>Soru 9</th>
+                        <th>Soru 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>D</td>
+                        <td>C</td>
+                        <td>A</td>
+                        <td>A</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="showVideo(1)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(2)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(3)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(4)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(5)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(6)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(7)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(8)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(9)">Çözümü İzle</button></td>
+                        <td><button onclick="showVideo(10)">Çözümü İzle</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
         <div id="video-container" class="test-video" style="display: none;">
-            <h3 id="video-title"></h3>
             <video controls id="video-player">
                 <source id="video-source" src="" type="video/mp4">
                 Tarayıcınız bu videoyu oynatmayı desteklemiyor.
@@ -45,33 +64,22 @@
         </div>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2024 Cevap Anahtarı. Tüm Hakları Saklıdır.</p>
-    </footer>
 
     <script>
-        // Video Gösterimi
         function showVideo(soruNumarasi) {
             const videoContainer = document.getElementById("video-container");
             const videoPlayer = document.getElementById("video-player");
             const videoSource = document.getElementById("video-source");
-            const videoTitle = document.getElementById("video-title");
 
-            // Videoyu Ayarla
             videoSource.src = `test1_soru${soruNumarasi}.mp4`;
             videoPlayer.load();
-            videoTitle.textContent = `Test 1 - Soru ${soruNumarasi} Çözüm Videosu`;
-
-            // Video Container'ı Göster
             videoContainer.style.display = "block";
         }
 
-        // Video Kapatma
         function closeVideo() {
             const videoContainer = document.getElementById("video-container");
             const videoPlayer = document.getElementById("video-player");
 
-            // Videoyu Durdur ve Gizle
             videoPlayer.pause();
             videoContainer.style.display = "none";
         }
