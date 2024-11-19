@@ -101,7 +101,9 @@ body {
 
 /* Kapat Butonu */
 .video-container button {
-    margin-top: 10px;
+    position: absolute;
+    top: 10px; /* Sağ üstte konumlandır */
+    right: 10px; /* Sağ tarafa hizalandı */
     background-color: #ff4d4d;
     color: white;
     border: none;
