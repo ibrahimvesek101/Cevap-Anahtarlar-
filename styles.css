@@ -6,55 +6,61 @@ body {
     background-color: #d4c38e;
     color: #333;
 
-    /* İçeriği tamamen ortalamak için flexbox */
     display: flex;
-    justify-content: center; /* Yatayda ortala */
-    align-items: flex-start; /* İçeriği yukarı hizala */
-    min-height: 100vh;      /* Görünüm yüksekliğini kapla */
-    overflow-x: hidden;     /* Yatay kaydırmayı engelle */
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Ana Konteyner */
 .container {
     text-align: center;
-    width: 100%;
-    max-width: 9000px;       /* İçerik genişliği */
-    margin: 20px auto;      /* Yukarıdan biraz boşluk bırak */
+    width: 90%;
+    max-width: 600px; /* Tablonun genel genişliği */
+    margin: 20px auto;
     padding: 10px;
-    box-sizing: border-box; /* Padding'lerin genişlik hesaplamasına dahil edilmesi */
+    box-sizing: border-box;
 }
 
 /* Test Başlığı */
 .test-title {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 1em; /* Yazı boyutu küçültüldü */
+    font-weight: bold; /* Kalın yazı tipi */
+    margin-bottom: 0px; /* Alt boşluk azaltıldı */
     color: #f20606;
     text-align: center;
 }
 
+
 /* Cevap Anahtarı Tablosu */
 .cevap-tablosu {
-    width: 100%;
+    width: auto; /* Tablonun genişliği içeriğe göre ayarlansın */
     border-collapse: collapse;
-    margin: 20px auto;      /* Tabloyu tam ortala */
+    margin: 15px auto;
     text-align: center;
+    table-layout: auto; /* Sütun genişliklerini içeriğe göre ayarla */
 }
 
 .cevap-tablosu thead th {
     background-color: #e6a955;
-    color: rgb(4, 4, 4);
-    padding: 10px;
-    border: 3px solid #be8364;
+    color: #333;
+    padding: 6px; /* Daha dar padding */
+    border: 2px solid #be8364;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 0.9em; /* Başlıklar daha küçük */
+    white-space: nowrap; /* Metinleri tek satırda tut */
+    text-align: center;
 }
 
 .cevap-tablosu tbody td {
-    padding: 10px;
-    border: 3px solid #be8364;
+    padding: 5px; /* Hücre içi boşluk azaltıldı */
+    border: 2px solid #be8364;
     background-color: #f9f9f9;
-    font-weight: bold;
+    font-size: 0.9em;
+    white-space: nowrap; /* Metinlerin hücreyi taşmaması için tek satırda tut */
+    font-weight: bold; /* Sayılar ve cevaplar kalın */
+    text-align: center;
 }
 
 .cevap-tablosu tbody tr:hover td {
@@ -64,11 +70,11 @@ body {
 /* Video Butonu */
 .cevap-tablosu tbody button {
     background-color: #4CAF50;
-    color: rgb(255, 255, 255);
+    color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 1em;
+    padding: 5px 8px; /* Buton boyutu küçültüldü */
+    border-radius: 4px;
+    font-size: 0.9em;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -80,33 +86,35 @@ body {
 /* Video Alanı */
 .video-container {
     position: fixed;
-    top: 50%; /* Yatay ortalamak için */
-    left: 50%; /* Dikey ortalamak için */
-    transform: translate(-50%, -50%); /* Merkeze tam hizalamak için */
-    background-color: white; /* Video alanının arka planı */
-    padding: 10px;
+    top: 50%; /* Ekranın ortasında */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     display: none; /* Varsayılan olarak gizli */
-    max-width: 90%; /* Video genişliği ekranın %90'ını geçmesin */
-    max-height: 90vh; /* Video yüksekliği ekranın %90'ını geçmesin */
+    max-width: 90%; /* Ekranın %90'ını geçmesin */
+    max-height: 90vh; /* Yükseklik ekranın %90'ını geçmesin */
+    overflow: hidden; /* Taşma olmasın */
 }
 
 /* Video */
 .video-container video {
     width: 100%; /* Videoyu container genişliğine ayarla */
-    height: auto; /* Oran korunsun */
-    max-height: 80vh; /* Videonun yüksekliği ekranın %80'ini aşmasın */
+    height: auto; /* Yükseklik oranı korunsun */
+    max-height: 80vh; /* Video yüksekliği ekranın %80'ini geçmesin */
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
+
 /* Kapat Butonu */
 .video-container button {
     position: absolute;
-    top: 10px; /* Sağ üstte konumlandır */
-    right: 10px; /* Sağ tarafa hizalandı */
+    top: 10px;
+    right: 10px;
     background-color: #ff4d4d;
     color: white;
     border: none;
@@ -115,7 +123,6 @@ body {
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.3s;
-    z-index: 1001; /* Butonun video üzerinde kalmasını sağla */
 }
 
 .video-container button:hover {
@@ -131,5 +138,5 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 999;
-    display: none; /* Varsayılan olarak gizli */
+    display: none;
 }
