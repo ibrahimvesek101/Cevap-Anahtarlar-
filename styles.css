@@ -33,40 +33,40 @@ body {
 }
 
 
-
 /* Cevap Anahtarı Tablosu */
 .cevap-tablosu {
-    width: auto; /* Tablonun genişliği içeriğe göre ayarlansın */
-    border-collapse: collapse;
-    margin: 15px auto;
-    text-align: center;
+    width: auto; /* Tablonun genişliği içeriğe göre ayarlanır */
+    margin: 20px auto; /* Ortalanır */
+    border-collapse: collapse; /* Hücre sınırlarını birleştir */
+    text-align: center; /* Metinleri ortala */
     table-layout: auto; /* Sütun genişliklerini içeriğe göre ayarla */
+    max-width: 100%; /* Tablonun taşmasını engelle */
 }
 
 .cevap-tablosu thead th {
     background-color: #e6a955;
     color: #333;
-    padding: 6px; /* Daha dar padding */
+    padding: 6px; /* Hücre içi boşluğu küçült */
     border: 2px solid #be8364;
     font-weight: bold;
-    font-size: 0.9em; /* Başlıklar daha küçük */
-    white-space: nowrap; /* Metinleri tek satırda tut */
-    text-align: center;
+    font-size: 0.9em; /* Başlık boyutunu küçült */
+    white-space: nowrap; /* Başlıkları tek satırda tut */
 }
 
 .cevap-tablosu tbody td {
-    padding: 5px; /* Hücre içi boşluk azaltıldı */
+    padding: 5px; /* Hücre içi boşluğu küçült */
     border: 2px solid #be8364;
     background-color: #f9f9f9;
-    font-size: 0.9em;
-    white-space: nowrap; /* Metinlerin hücreyi taşmaması için tek satırda tut */
-    font-weight: bold; /* Sayılar ve cevaplar kalın */
-    text-align: center;
+    font-size: 0.9em; /* Yazı boyutunu küçült */
+    white-space: nowrap; /* Metinlerin taşmasını önle */
+    font-weight: bold; /* Kalın yazı */
+    text-align: center; /* Hücre içeriğini ortala */
 }
 
 .cevap-tablosu tbody tr:hover td {
-    background-color: #e8f5e8;
+    background-color: #e8f5e8; /* Hücre üzerine gelindiğinde arka plan rengi */
 }
+
 
 /* Video Butonu */
 .cevap-tablosu tbody button {
