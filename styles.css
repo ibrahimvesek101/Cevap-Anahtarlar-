@@ -16,8 +16,8 @@ body {
 /* Ana Konteyner */
 .container {
     text-align: center;
-    width: 90%;
-    max-width: 600px; /* Tablonun genel genişliği */
+    width: auto; /* İçeriğe göre genişlik */
+    max-width: 90%; /* Sayfa genişliğinin %90'ını geçmesin */
     margin: 20px auto;
     padding: 10px;
     box-sizing: border-box;
@@ -27,20 +27,19 @@ body {
 .test-title {
     font-size: 1em; /* Yazı boyutu küçültüldü */
     font-weight: bold; /* Kalın yazı tipi */
-    margin-bottom: 0px; /* Alt boşluk azaltıldı */
+    margin-bottom: 10px; /* Alt boşluk azaltıldı */
     color: #f20606;
     text-align: center;
 }
 
-
 /* Cevap Anahtarı Tablosu */
 .cevap-tablosu {
     width: auto; /* Tablonun genişliği içeriğe göre ayarlanır */
-    margin: 20px auto; /* Ortalanır */
+    margin: 0 auto; /* Tabloyu yatayda ortala */
     border-collapse: collapse; /* Hücre sınırlarını birleştir */
     text-align: center; /* Metinleri ortala */
     table-layout: auto; /* Sütun genişliklerini içeriğe göre ayarla */
-    max-width: 100%; /* Tablonun taşmasını engelle */
+    max-width: 100%; /* Ekranı taşmasını engelle */
 }
 
 .cevap-tablosu thead th {
@@ -51,6 +50,7 @@ body {
     font-weight: bold;
     font-size: 0.9em; /* Başlık boyutunu küçült */
     white-space: nowrap; /* Başlıkları tek satırda tut */
+    text-align: center;
 }
 
 .cevap-tablosu tbody td {
@@ -66,7 +66,6 @@ body {
 .cevap-tablosu tbody tr:hover td {
     background-color: #e8f5e8; /* Hücre üzerine gelindiğinde arka plan rengi */
 }
-
 
 /* Video Butonu */
 .cevap-tablosu tbody button {
@@ -109,7 +108,6 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
-
 
 /* Kapat Butonu */
 .video-container button {
