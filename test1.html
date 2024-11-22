@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Test-1 CEVAP ANAHTARI</title>
+    <title>Test-1 Cevap Anahtarı</title>
 </head>
 <body>
     <main class="container">
-        <h3 class="test-title">TEST-1 CEVAP ANAHTARI</h3>
+        <h3 class="test-title">TEST-1 Cevap Anahtarı</h3>
 
         <section class="cevap-anahtari">
             <table class="cevap-tablosu">
@@ -32,12 +32,12 @@
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>D</td>
+                        <td>C</td>
                         <td><button onclick="showVideo(3)">Çözümü İzle</button></td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>C</td>
+                        <td>D</td>
                         <td><button onclick="showVideo(4)">Çözümü İzle</button></td>
                     </tr>
                     <tr>
@@ -47,7 +47,7 @@
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td>A</td>
+                        <td>B</td>
                         <td><button onclick="showVideo(6)">Çözümü İzle</button></td>
                     </tr>
                     <tr>
@@ -62,12 +62,12 @@
                     </tr>
                     <tr>
                         <td>9</td>
-                        <td>B</td>
+                        <td>A</td>
                         <td><button onclick="showVideo(9)">Çözümü İzle</button></td>
                     </tr>
                     <tr>
                         <td>10</td>
-                        <td>C</td>
+                        <td>B</td>
                         <td><button onclick="showVideo(10)">Çözümü İzle</button></td>
                     </tr>
                 </tbody>
@@ -79,11 +79,10 @@
 
         <!-- Video Alanı -->
         <div id="video-container" class="video-container">
-            <video controls id="video-player">
+            <video controls id="video-player" playsinline webkit-playsinline>
                 <source id="video-source" src="" type="video/mp4">
                 Tarayıcınız bu videoyu desteklemiyor.
             </video>
-            <button onclick="closeVideo()">Kapat</button>
         </div>
     </main>
 
@@ -100,6 +99,15 @@
 
             overlay.style.display = "block"; // Arka planı karart
             videoContainer.style.display = "block"; // Videoyu göster
+
+            // Video Tam Ekran
+            if (videoPlayer.requestFullscreen) {
+                videoPlayer.requestFullscreen();
+            } else if (videoPlayer.webkitRequestFullscreen) {
+                videoPlayer.webkitRequestFullscreen(); // Safari destekler
+            } else if (videoPlayer.msRequestFullscreen) {
+                videoPlayer.msRequestFullscreen(); // Internet Explorer/Edge
+            }
         }
 
         // Video Kapatma
