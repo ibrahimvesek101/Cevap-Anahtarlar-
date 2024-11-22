@@ -69,18 +69,28 @@ body {
 
 /* Video Butonu */
 .cevap-tablosu tbody button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 5px 8px; /* Buton boyutu küçültüldü */
-    border-radius: 4px;
-    font-size: 0.9em;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #4CAF50; /* Düğmenin arka plan rengi */
+    color: white; /* Yazı rengi */
+    border: none; /* Kenar çizgisi yok */
+    padding: 8px 12px; /* Buton boyutunu belirler */
+    border-radius: 4px; /* Kenarların yuvarlaklığı */
+    font-size: 1em; /* Yazı boyutu */
+    font-weight: bold; /* Yazı kalınlığı */
+    cursor: pointer; /* Fareyle üzerine gelindiğinde işaretçi değişimi */
+    transition: background-color 0.3s ease; /* Arka plan renginin yumuşak geçişi */
+    appearance: none; /* Tarayıcı varsayılan stilini kaldırır */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
 }
 
 .cevap-tablosu tbody button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Fareyle üzerine gelindiğinde arka plan rengi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Daha belirgin gölge efekti */
+}
+
+.cevap-tablosu tbody button:active {
+    background-color: #3e8e41; /* Butona tıklanıldığında arka plan rengi */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* İç gölge efekti */
+    transform: scale(0.98); /* Hafif küçülme efekti */
 }
 
 /* Video Alanı */

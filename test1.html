@@ -99,15 +99,6 @@
 
             overlay.style.display = "block"; // Arka planı karart
             videoContainer.style.display = "block"; // Videoyu göster
-
-            // Video Tam Ekran
-            if (videoPlayer.requestFullscreen) {
-                videoPlayer.requestFullscreen();
-            } else if (videoPlayer.webkitRequestFullscreen) {
-                videoPlayer.webkitRequestFullscreen(); // Safari destekler
-            } else if (videoPlayer.msRequestFullscreen) {
-                videoPlayer.msRequestFullscreen(); // Internet Explorer/Edge
-            }
         }
 
         // Video Kapatma
