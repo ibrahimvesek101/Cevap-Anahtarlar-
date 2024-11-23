@@ -100,12 +100,13 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 15px;
+    padding: 20px; /* Daha geniş padding */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Daha belirgin gölge efekti */
     z-index: 1000;
     display: none; /* Varsayılan olarak gizli */
-    max-width: 90%; /* Ekranın %90'ını geçmesin */
+    width: 80%; /* Varsayılan genişlik */
+    max-width: 80%; /* Maksimum genişlik artırıldı */
     max-height: 90vh; /* Yükseklik ekranın %90'ını geçmesin */
     overflow: hidden; /* Taşma olmasın */
 }
@@ -114,7 +115,7 @@ body {
 .video-container video {
     width: 100%; /* Videoyu container genişliğine ayarla */
     height: auto; /* Yükseklik oranı korunsun */
-    max-height: 80vh; /* Video yüksekliği ekranın %80'ini geçmesin */
+    max-height: 85vh; /* Video yüksekliği ekranın %85'ini geçmesin */
     border: 1px solid #ddd;
     border-radius: 5px;
 }
